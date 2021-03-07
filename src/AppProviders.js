@@ -1,8 +1,9 @@
-import { AuthProvider } from 'context/auth-context';
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { BrowserRouter as Router } from 'react-router-dom';
 
+import { AuthProvider } from 'context/auth-context';
 import './styles/main.scss';
 
 const queryClient = new QueryClient({
@@ -22,8 +23,10 @@ export default function AppProviders({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        {children}
-        <ReactQueryDevtools />
+        <Router>
+          {children}
+          <ReactQueryDevtools />
+        </Router>
       </AuthProvider>
     </QueryClientProvider>
   );

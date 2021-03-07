@@ -1,10 +1,10 @@
-// import DOMPurify from "dompurify";
+import DOMPurify from 'dompurify';
 
 export function isTextValid() {}
 
 export function validate(
-  input = "",
-  type = "custom",
+  input = '',
+  type = 'custom',
   {
     min_length: min = 1,
     max_length: max = 70,
@@ -29,16 +29,16 @@ export function validate(
       );
     }
   }
-  if (type === "html") {
-    input = DOMPurify.sanitize(input, { ALLOWED_TAGS: ["b"] }).trim();
+  if (type === 'html') {
+    input = DOMPurify.sanitize(input, { ALLOWED_TAGS: ['b'] }).trim();
   }
   if (input.length > max || input.length < min) {
     throw Error(
       `${identifier} must be minimum ${min} and maximum ${max} characters`
     );
   }
-  if (input.includes("\n")) {
-    input = input.replace(/\n+/g, "\n").trim();
+  if (input.includes('\n')) {
+    input = input.replace(/\n+/g, '\n').trim();
   }
 
   return input;

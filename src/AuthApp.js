@@ -1,8 +1,10 @@
-import Header from "components/Header";
-import Nav from "components/BottomNav";
-import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import MediaQuery from "react-responsive";
+import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import MediaQuery from 'react-responsive';
+
+import Header from 'components/Header';
+import Nav from 'components/BottomNav';
+import Routes from 'Routes';
 
 export default function AuthApp() {
   return (
@@ -19,6 +21,7 @@ export default function AuthApp() {
         </MediaQuery>
         <Col sm="11" xl="10">
           {/* Routes */}
+          <Routes />
         </Col>
       </Row>
       <MediaQuery maxWidth={576}>
