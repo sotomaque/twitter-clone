@@ -30,7 +30,7 @@ export default function BottomNav() {
     },
     {
       name: 'Profile',
-      href: `/user/${authUser.screen_name}`,
+      href: `/user/${authUser?.screen_name}`,
       icon: faUser,
     },
   ];
